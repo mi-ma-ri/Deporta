@@ -1,0 +1,30 @@
+<%= form_with model: @meeting,  local: true do |f|%>
+  <div class="field">
+    <%= f.label :content, "共有事項" %><br />
+    <%= f.text_field :content, class: :form__text, id:"prototype_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :attack, "攻撃面について" %><br />
+    <%= f.text_area :attack, class: :form__text, id:"prototype_catch_copy" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :defence, "守備面について" %><br />
+    <%= f.text_area :defence, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :attack_url, "攻撃動画について" %><br />
+    <%= f.text_area :attack_url, class: :form__text, id:"prototype_image" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :defence_url, "守備動画について" %><br />
+    <%= f.text_area :defence_url, class: :form__text, id:"prototype_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<div class="js-tab-panel">
+    <div class="flex justify-start">
+      <div class="js-tab active_tab">
+        共有事項
+      </div>
+      <div class="js-tab inactive_tab">
+        攻撃面について
+      </div>
+     <div class="js-tab inactive_tab">
+       守備面について
+     </div>
+      <div class="js-tab inactive_tab">
+        攻撃動画
+      </div>
+      <div class="js-tab inactive_tab">
+        守備動画
+      </div>
+    </div>
+
+  <div class="js-panel active_content">
+    <%=safe_join(meeting.content.split("\n"),tag(:br))%>
+  </div>
+
+  <div class="js-panel inactive_content">
+    <%=safe_join(meeting.attack.split("\n"),tag(:br))%>
+  </div>
+
+  <div class="js-panel inactive_content">
+    <%=safe_join(meeting.defence.split("\n"),tag(:br))%>
+  </div>
+
+  <div class="js-panel inactive_content">
+    <%= link_to "攻撃動画", "#{meeting.attack_url}", method: :get %>
+  </div>
+
+  <div class="js-panel inactive_content">
+    <%= link_to "守備動画", "#{meeting.defence_url}", method: :get %>
+  </div>
+
+  <ul class="more_list">
+    <li>
+      <%= link_to '詳細', meeting_path(meeting), method: :get, class: :show__btn %>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,73 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <p class="prototype__hedding">
+        <%= @meeting.content %>
+      </p>
+      <%= link_to "by #{@meeting.user.name}", root_path, class: :prototype__user %>
+        <% if user_signed_in? && current_user.id == @meeting.user_id %>
+          <div class="prototype__manage">
+            <%= link_to "編集する", edit_meeting_path(@meeting), class: :prototype__btn %>
+            <%= link_to "削除する", meeting_path(@meeting), method: :delete, class: :prototype__btn %>
+          </div>
+        <% end %>
+
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__title">■共有事項</p>
+          <p class="detail__message">
+            <%=safe_join(@meeting.content.split("\n"),tag(:br))%>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">■攻撃面について</p>
+          <p class="detail__message">
+            <%=safe_join(@meeting.attack.split("\n"),tag(:br))%>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">■守備面について</p>
+          <p class="detail__message">
+            <%=safe_join(@meeting.defence.split("\n"),tag(:br))%>
+          </p>
+      </div>
+      <div class="prototype__detail">
+          <p class="detail__title">■攻撃動画</p>
+          <p class="detail__message">
+            <%= link_to "攻撃動画", "#{@meeting.attack_url}", method: :get %>
+          </p>
+        </div>
+
+        <div class="prototype__detail">
+          <p class="detail__title">■守備動画</p>
+          <p class="detail__message">
+            <%= link_to "守備動画", "#{@meeting.defence_url}", method: :get %>
+          </p>
+        </div>
+      </div>
+
+      <div class="prototype__comments">
+        <% if user_signed_in? %>
+          <%= form_with(model: [@meeting, @comment], local: true) do |f|%>
+            <div class="field">
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_field :text, id:"comment_content" %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <% end %>
+        <% end %>
+          <ul class="comments_lists">
+            <% @comments.each do | comment | %>
+              <li class="comments_list">
+                <%= comment.text %>
+                <%= link_to "#{comment.user.name}", user_path(@meeting.user), class: :comment_user %>
+
+              </li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+  </div>
+</main>

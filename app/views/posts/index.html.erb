@@ -1,0 +1,23 @@
+<main class="main">
+  <div class="inner">
+     <% if user_signed_in?  %>
+      <div class="p-greeting">
+        <%= "ようこそ！" %>
+        <%= link_to "Let's enjoy sport", user_path(current_user.id), class: :greeting__link%>
+      </div>
+    <% end %>
+    <div class="card__wrapper">
+      <%= link_to ("/meetings/new") do %>
+        <%= image_tag 'Meeting.png',size: '250x200', class: "purchase-btn-icon" %>
+      <% end %>
+
+      <%= link_to ("/prototypes/new") do %>
+        <%= image_tag 'status.png',size: '250x200', class: "purchase-btn-icon" %>
+      <% end %>
+      
+      <%= link_to ("/prototypes/new") do %>
+        <%= image_tag 'sche.png',size: '250x200', class: "purchase-btn-icon" %>
+      <% end %>
+    </div>
+  </div>
+</main>
