@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("turbolinks:load", function () {
   // タブに対してクリックイベントを適用
   const tabs = document.getElementsByClassName("js-tab");
   for (let i = 0; i < tabs.length; i++) {
