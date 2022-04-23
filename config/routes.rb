@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :posts, only: :index
   resources :meetings do
-    resources :comments, only: [:create, :destroy, :edit]
+    resources :comments, only: [:create, :destroy,]
   end
 end
