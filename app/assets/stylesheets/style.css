@@ -42,6 +42,8 @@ a {
   margin-bottom: 48px;
   padding: 20px 0;
   color: #fff;
+  display: flex;
+  justify-content: space-around;
 }
 
 .inner {
@@ -51,11 +53,23 @@ a {
 .nav {
   width: 100%;
   display: flex;
-  justify-content: right
+  justify-content: space-between
+}
+
+.nav__left{
+  width: 200px;
+  display: flex;
 }
 
 .logo{
   width: 200px;
+  border: 2px solid white;
+}
+
+
+.twitter-share-button{
+  background-color: #fff;
+  margin-top: 7px;
 }
 
 .nav__btn{
@@ -109,12 +123,16 @@ a {
    width: 100%;
    padding: 10px;
    border-radius: 5px;
-   border: 1px solid #ccc;
+   border: 1px solid #f06d06;
    appearance: none;
    -webkit-appearance: none;
    -moz-appearance: none;
    max-width: 400px;
    text-align: center;
+}
+
+.tw_ber{
+  color: white;
 }
 
 /* フォーム周り */
@@ -126,7 +144,7 @@ a {
 }
 
 .field{
-  margin: 10px 0;
+  margin-top: 10px;
 }
 
 .actions{
@@ -137,13 +155,14 @@ a {
   color: white;
   background-color: black;
   border-bottom: 5px solid white;
+  margin-top: 20px;
 }
 
 .ses__btn:hover {
   margin-top: 3px;
   color: #000;
   background: white;
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid #f06d06;
 }
 
 
@@ -159,6 +178,7 @@ a {
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
+  margin-top: 30px;
 }
 
 .form__btn:hover {
@@ -207,7 +227,7 @@ a {
 }
 .page-heading {
   font-size: 30px;
-  margin-bottom: 28px;
+  margin-top: 10px;
 }
 .card__wrapper {
   display: flex;
@@ -428,6 +448,11 @@ justify-content: space-between;
   border-bottom: 2px solid white;
 }
 
+.comment_content{
+  margin-top: 20px;
+  width: 200px;
+}
+
 /* ユーザーページ */
 
 .user__wrapper{
@@ -470,12 +495,12 @@ justify-content: space-between;
 /* フッター */
 
 .footer {
-  background-color: black;
+  background-color: white;
   padding: 10px 0;
 }
 .copyright {
   text-align: center;
-  color: #fff;
+  color: black;
   font-size: 10px;
 }
 
