@@ -3,11 +3,12 @@ class MeetingsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @meetings = Meeting.all.order("created_at DESC")
+    @meetings = Meeting.includes(:user).order("created_at ASC")
   end
 
   def new 
     @meeting = Meeting.new
+    @meeting = current_user.meetings.build
   end
 
   def create
