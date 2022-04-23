@@ -1,7 +1,7 @@
 <%= form_with model: @meeting,  local: true do |f|%>
   <div class="field">
     <%= f.label :content, "共有事項" %><br />
-    <%= f.text_field :content, class: :form__text, id:"prototype_title" %>
+    <%= f.text_area :content, class: :form__text, id:"prototype_title" %>
   </div>
 
   <div class="field">

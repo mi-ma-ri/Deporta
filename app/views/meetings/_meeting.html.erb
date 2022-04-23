@@ -30,11 +30,11 @@
   </div>
 
   <div class="js-panel inactive_content">
-    <%= link_to "攻撃動画", "#{meeting.attack_url}", method: :get %>
+    <%= link_to "#{meeting.attack_url}", "#{meeting.attack_url}", method: :get %>
   </div>
 
   <div class="js-panel inactive_content">
-    <%= link_to "守備動画", "#{meeting.defence_url}", method: :get %>
+    <%= link_to "#{meeting.defence_url}", "#{meeting.defence_url}", method: :get %>
   </div>
 
   <ul class="more_list">
@@ -42,4 +42,10 @@
       <%= link_to '詳細', meeting_path(meeting), method: :get, class: :show__btn %>
     </li>
   </ul>
+
+  <div class="messa-date">
+    <a class="submessa-date">投稿日時</a>
+    <%= l meeting.created_at %>
+    <span> 投稿者：</span><%= meeting.user.name %>
+  </div>
 </div>

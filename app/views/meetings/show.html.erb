@@ -50,8 +50,8 @@
         <% if user_signed_in? %>
           <%= form_with(model: [@meeting, @comment], local: true) do |f|%>
             <div class="field">
-              <%= f.label :text, "コメント" %><br />
-              <%= f.text_field :text, id:"comment_content" %>
+              <%= f.label :text, "※コメント漏れで欠席(100m30本)は罰走です" %><br />
+              <%= f.text_field :text, id:"comment_content", class: :comment_content %>
             </div>
             <div class="actions">
               <%= f.submit "送信する", class: :form__btn  %>
@@ -63,8 +63,11 @@
               <li class="comments_list">
                 <%= comment.text %>
                 <%= link_to "#{comment.user.name}", user_path(@meeting.user), class: :comment_user %>
-
               </li>
+              <div class="message-date">
+                <%= l comment.created_at %>
+              </div>
+                <%= link_to "削除", meeting_comment_path(@meeting, comment), method: :delete %>
             <% end %>
           </ul>
       </div>
