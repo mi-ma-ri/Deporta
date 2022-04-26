@@ -9,10 +9,10 @@ Deporta
 http://18.178.74.224/
 
 #　テスト用アカウント
-Basic認証パスワード:2939
-Basic認証ID:admin
-メールアドレス:michihiros93@gmailcom
-パスワード:shi034936
+*Basic認証パスワード:2939
+*Basic認証ID:admin
+*メールアドレス:michihiros93@gmailcom
+*パスワード:shi034936
 
 # 利用方法
 ## ミーティング事項
