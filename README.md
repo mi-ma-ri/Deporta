@@ -11,7 +11,7 @@ http://18.178.74.224/
 #　テスト用アカウント
 <br> Basic認証パスワード:2939
 <br> Basic認証ID:admin
-<br> メールアドレス:michihiros93@gmailcom
+<br> メールアドレス:michihiros93@gmail.com
 <br> パスワード:shi034936
 
 # 利用方法
