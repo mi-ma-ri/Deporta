@@ -520,7 +520,7 @@ justify-content: space-between;
 }
 
  /* スマホ表示 */
-@media (max-width: 599px) {
+@media (max-width: 500px) {
   .logo {
     width: 120px;
   }
