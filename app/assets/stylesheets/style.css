@@ -524,6 +524,9 @@ justify-content: space-between;
   .logo {
     width: 120px;
   }
+  .nav__btn {
+    width: 120px;
+  }
   .page-heading {
     font-size: 20px;
   }
